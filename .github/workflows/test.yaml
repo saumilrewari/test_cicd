@@ -3,7 +3,7 @@ name: Update Jira Ticket Status
 on:
   push:
     branches:
-      - main  # Replace with your main branch name
+      - master  # Replace with your main branch name
 
 jobs:
   update_jira_status:
