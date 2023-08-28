@@ -26,6 +26,8 @@ jobs:
 
     - name: Login
       uses: atlassian/gajira-login@v2.0.0
+      run: |
+        echo"$JIRA_API_TOKEN"
       env:
         JIRA_BASE_URL: "https://infocusp.atlassian.net/"
         JIRA_USER_EMAIL: "saumil@infocusp.com"
