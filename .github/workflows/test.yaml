@@ -22,12 +22,12 @@ jobs:
       run: pip install requests
 
     - name: Run Selenium Tests
-      run: echo "Selenium Test Successful"
+      run: |
+        echo "Selenium Test Successful"
+        echo "$JIRA_API_TOKEN"
 
     - name: Login
       uses: atlassian/gajira-login@v2.0.0
-      run: |
-        echo"$JIRA_API_TOKEN"
       env:
         JIRA_BASE_URL: "https://infocusp.atlassian.net/"
         JIRA_USER_EMAIL: "saumil@infocusp.com"
