@@ -24,11 +24,11 @@ jobs:
     - name: Run Selenium Tests
       run: echo "Selenium Test Successful"
 
-#    - name: Update Jira Ticket Status
-#      env:
-#        JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
-#        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
-#        JIRA_TICKET_KEY: "YOUR-JIRA-TICKET-KEY"  # Replace with the actual Jira ticket key
-#        NEW_STATUS: "In Progress"  # Replace with the desired new status
-#      run: |
-#        python update_jira_status.py
+    - name: Update Jira Ticket Status
+      env:
+        JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
+        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+        JIRA_TICKET_KEY: "YOUR-JIRA-TICKET-KEY"  # Replace with the actual Jira ticket key
+        NEW_STATUS: "In Progress"  # Replace with the desired new status
+      run: |
+        python update_jira_status.py
