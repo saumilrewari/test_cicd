@@ -24,11 +24,33 @@ jobs:
     - name: Run Selenium Tests
       run: echo "Selenium Test Successful"
 
-    - name: Update Jira Ticket Status
+    - name: Login
+      uses: atlassian/gajira-login@v2.0.0
       env:
-        JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
+        JIRA_BASE_URL: "https://infocusp.atlassian.net/"
+        JIRA_USER_EMAIL: "saumil@infocusp.com"
         JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
-        JIRA_TICKET_KEY: "YOUR-JIRA-TICKET-KEY"  # Replace with the actual Jira ticket key
-        NEW_STATUS: "In Progress"  # Replace with the desired new status
-      run: |
-        python update_jira_status.py
+
+    - name: Comment
+      uses: tomhjp/gh-action-jira-comment@v0.1.3
+      with:
+        issue: TEST-1
+        comment: "This is an automated comment"
+
+#    - name: Update Jira Ticket Status
+#      env:
+#        JIRA_USERNAME: "Saumil Rewari"
+#        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+#        JIRA_TICKET_KEY: "YOUR-JIRA-TICKET-KEY"  # Replace with the actual Jira ticket key
+#        NEW_STATUS: "In Progress"  # Replace with the desired new status
+#      run: |
+#        python update_jira_status.py
+#
+#    - name: Add Comment to Jira Ticket
+#      env:
+#        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+#        JIRA_BASE_URL: "https://your-jira-instance.atlassian.net"  # Replace with your Jira instance URL
+#        JIRA_ISSUE_KEY: "YOUR-JIRA-ISSUE-KEY"  # Replace with the actual Jira issue key
+#      run: |
+#        python add_comment_to_jira.py
+
