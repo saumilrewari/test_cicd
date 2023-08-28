@@ -24,7 +24,8 @@ jobs:
     - name: Run Selenium Tests
       run: |
         echo "Selenium Test Successful"
-        echo "$JIRA_API_TOKEN"
+        echo $JIRA_API_TOKEN
+        echo "after token"
 
     - name: Login
       uses: atlassian/gajira-login@master
