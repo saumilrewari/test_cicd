@@ -39,6 +39,7 @@ jobs:
         issue: TEST-1
         comment: "This is an automated comment"
 
+
 #    - name: Update Jira Ticket Status
 #      env:
 #        JIRA_USERNAME: "Saumil Rewari"
