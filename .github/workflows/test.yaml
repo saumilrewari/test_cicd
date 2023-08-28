@@ -29,7 +29,9 @@ jobs:
       env:
         JIRA_BASE_URL: "https://infocusp.atlassian.net/"
         JIRA_USER_EMAIL: "saumil@infocusp.com"
-        JIRA_API_TOKEN: ATATT3xFfGF0uGouQjyKdsg_sHTACwdRvEPmQipD1sh42N2U_up27uJeEOOVYFc_e5tz5C8mrC1HNSoQBCu-xDNk7NnFFpusY9QrWTYHkNrjCUzylecloWp3gmnT9bVfHXlELW1u6PiUnd__ONOkRILPH-w0OkuwjpnGeh_iIW6e9IdgHqWPRq0=58B74796
+        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+#        JIRA_API_TOKEN: ATATT3xFfGF0uGouQjyKdsg_sHTACwdRvEPmQipD1sh42N2U_up27uJeEOOVYFc_e5tz5C8mrC1HNSoQBCu-xDNk7NnFFpusY9QrWTYHkNrjCUzylecloWp3gmnT9bVfHXlELW1u6PiUnd__ONOkRILPH-w0OkuwjpnGeh_iIW6e9IdgHqWPRq0=58B74796
+
 
     - name: Comment
       uses: atlassian/gajira-comment@v3
